@@ -42,7 +42,6 @@ namespace CapaPresentacion
                 objAfiliado.idPLan = int.Parse(dgvAfiliados.Rows[e.RowIndex].Cells[4].Value.ToString());
                 objAfiliado.observaciones = dgvAfiliados.Rows[e.RowIndex].Cells[7].Value.ToString();
 
-
                 objFormDetails.LoadContact(objAfiliado);
                 objFormDetails.ShowDialog();
 

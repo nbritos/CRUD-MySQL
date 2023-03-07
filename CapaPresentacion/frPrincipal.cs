@@ -55,5 +55,13 @@ namespace CapaPresentacion
             objfrHabilitar.StartPosition = FormStartPosition.CenterScreen;
             objfrHabilitar.Show();
         }
+
+        private void agregarPlanesAdicionalesAlAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frPlanesAdicionales objfrPlanesAdicionales = new frPlanesAdicionales();
+            objfrPlanesAdicionales.MdiParent = this;
+            objfrPlanesAdicionales.StartPosition = FormStartPosition.CenterParent;
+            objfrPlanesAdicionales.Show();
+        }
     }
 }

@@ -85,6 +85,7 @@
             this.agregarPlanesAdicionalesAlAfiliadoToolStripMenuItem.Name = "agregarPlanesAdicionalesAlAfiliadoToolStripMenuItem";
             this.agregarPlanesAdicionalesAlAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(346, 26);
             this.agregarPlanesAdicionalesAlAfiliadoToolStripMenuItem.Text = "Agregar Planes Adicionales al Afiliado";
+            this.agregarPlanesAdicionalesAlAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.agregarPlanesAdicionalesAlAfiliadoToolStripMenuItem_Click);
             // 
             // frPrincipal
             // 

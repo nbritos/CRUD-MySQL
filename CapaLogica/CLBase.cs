@@ -57,5 +57,31 @@ namespace CapaLogica
             return ds;
         }
 
+        public DataSet BuscarPorApellido(CEAfiliados paramAfiliado)
+        {
+            DataSet ds = objDatosAfiliados.BuscarPorApellido(paramAfiliado);
+            return ds;
+        }
+
+        public DataSet BuscarPorID(CEAfiliados paramAfiliado)
+        {
+            DataSet ds = objDatosAfiliados.BuscarPorID(paramAfiliado);
+            return ds;
+        }
+
+        public void AgregarPlanAlAfiliado(CEAfiliados paramAfiliado)
+        {
+            objDatosAfiliados.AgregarPlanAlAfiliado(paramAfiliado);
+        }
+
+        public bool ValidarPlanAdicional(CEAfiliados paramAfiliado) 
+        {
+            return objDatosAfiliados.ValidarPlanAdicional(paramAfiliado);
+        }
+
+        public bool ValidarPlanPrincipal(CEAfiliados paramAfiliado)
+        {
+            return objDatosAfiliados.ValidarPlanPrincipal(paramAfiliado);
+        }
     }
 }

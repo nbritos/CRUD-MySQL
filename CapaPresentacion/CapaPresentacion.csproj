@@ -58,6 +58,12 @@
     <Compile Include="frAgregarAFiliado.Designer.cs">
       <DependentUpon>frAgregarAFiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frAgregarPlanesAdicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frAgregarPlanesAdicionales.Designer.cs">
+      <DependentUpon>frAgregarPlanesAdicionales.cs</DependentUpon>
+    </Compile>
     <Compile Include="frBajaAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     <Compile Include="frModificarAfiliado.Designer.cs">
       <DependentUpon>frModificarAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frPlanesAdicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frPlanesAdicionales.Designer.cs">
+      <DependentUpon>frPlanesAdicionales.cs</DependentUpon>
+    </Compile>
     <Compile Include="frPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,9 @@
     <EmbeddedResource Include="frAgregarAFiliado.resx">
       <DependentUpon>frAgregarAFiliado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frAgregarPlanesAdicionales.resx">
+      <DependentUpon>frAgregarPlanesAdicionales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frBajaAfiliado.resx">
       <DependentUpon>frBajaAfiliado.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frModificarAfiliado.resx">
       <DependentUpon>frModificarAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frPlanesAdicionales.resx">
+      <DependentUpon>frPlanesAdicionales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frPrincipal.resx">
       <DependentUpon>frPrincipal.cs</DependentUpon>

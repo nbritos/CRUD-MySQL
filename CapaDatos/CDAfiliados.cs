@@ -111,8 +111,6 @@ namespace CapaDatos
         }
 
 
-
-
         public int TraerPlanAfiliados (string paramID)
         {
             int value=0;
@@ -182,6 +180,107 @@ namespace CapaDatos
                 throw;
             }
             finally { conn.Close(); }
+        }
+
+        public DataSet BuscarPorApellido(CEAfiliados paramAfiliado)
+        {
+            MySqlConnection conn = new MySqlConnection(connString);
+            string query = "SELECT * from afiliados WHERE apellido like  '" + paramAfiliado.apellido + "'";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+            DataSet ds = new DataSet();
+
+            try
+            {
+                conn.Open();
+                adapter.Fill(ds, "tablaAfiliados");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return ds;
+        }
+
+        public DataSet BuscarPorID(CEAfiliados paramAfiliado)
+        {
+            MySqlConnection conn = new MySqlConnection(connString);
+            string query = "SELECT * from afiliados WHERE idAfiliado = '" + paramAfiliado.idAfiliado + "'";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+            DataSet ds = new DataSet();
+
+            try
+            {
+                conn.Open();
+                adapter.Fill(ds, "tablaAfiliados");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return ds;
+        }
+
+        public void AgregarPlanAlAfiliado(CEAfiliados paramAfiliado)
+        {
+            string query = "INSERT INTO afiliadoplanesadicionales (idAfiliado,idPlan,porcentajecobertura) VALUES" +
+                " (@idAfiliado,@idPlan,0);";
+            MySqlConnection conn = new MySqlConnection(connString);
+            try
+            {
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("idAfiliado", paramAfiliado.idAfiliado);
+                command.Parameters.AddWithValue("idPlan", paramAfiliado.idPLan);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { conn.Close(); }
+        }
+        public bool ValidarPlanPrincipal(CEAfiliados paramAfiliado)
+        {
+            bool value = true;
+            string query = "SELECT idPlan FROM afiliados WHERE idPlan = '" + paramAfiliado.idPLan + "'";
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand command = new MySqlCommand(query, conn);
+            MySqlDataReader reader;
+            try
+            {
+                conn.Open();
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    value = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return value;
+        }
+        public bool ValidarPlanAdicional(CEAfiliados paramAfiliado)
+        {
+            return true;
         }
     }
 }
