@@ -30,18 +30,22 @@
         {
             this.dgvAfiliadosInactivos = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.Habilitar = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAfiliadosInactivos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvAfiliadosInactivos
             // 
             this.dgvAfiliadosInactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAfiliadosInactivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Habilitar});
             this.dgvAfiliadosInactivos.Location = new System.Drawing.Point(13, 13);
             this.dgvAfiliadosInactivos.Name = "dgvAfiliadosInactivos";
             this.dgvAfiliadosInactivos.RowHeadersWidth = 51;
             this.dgvAfiliadosInactivos.RowTemplate.Height = 24;
             this.dgvAfiliadosInactivos.Size = new System.Drawing.Size(775, 354);
             this.dgvAfiliadosInactivos.TabIndex = 0;
+            this.dgvAfiliadosInactivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAfiliadosInactivos_CellContentClick);
             // 
             // btnCerrar
             // 
@@ -52,6 +56,16 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // Habilitar
+            // 
+            this.Habilitar.HeaderText = "Habilitar";
+            this.Habilitar.MinimumWidth = 6;
+            this.Habilitar.Name = "Habilitar";
+            this.Habilitar.ReadOnly = true;
+            this.Habilitar.Text = "Habilitar";
+            this.Habilitar.UseColumnTextForLinkValue = true;
+            this.Habilitar.Width = 125;
             // 
             // frHabilitarAfiliados
             // 
@@ -72,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView dgvAfiliadosInactivos;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.DataGridViewLinkColumn Habilitar;
     }
 }

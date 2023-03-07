@@ -46,6 +46,11 @@ namespace CapaLogica
             objDatosAfiliados.BajaAfiliado(paramAfiliado);
         }
 
+        public void HabilitarAfiliado(CEAfiliados paramAfiliado)
+        {
+            objDatosAfiliados.HabilitarAfiliados(paramAfiliado);
+        }
+
         public DataSet TraerAfiliadosInactivos()
         {
             DataSet ds = objDatosAfiliados.LeerAfiliadosInactivos();

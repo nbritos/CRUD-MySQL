@@ -32,26 +32,19 @@ namespace CapaPresentacion
            //el objeto dgvcell va a ser nulo cuando el valor de la columna en la que se haya hecho click no sea de tipo dgvlc
            DataGridViewLinkCell objdgvlcell = (DataGridViewLinkCell)dgvAfiliados.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-
-            if (objdgvlcell.Value.ToString() == "Editar")
+            //valido si la celda 6 de la columna fbaja es un string vacio
+            if (objdgvlcell.Value.ToString() == "Editar"
+                && dgvAfiliados.Rows[e.RowIndex].Cells[6].Value.ToString() == string.Empty)
             {
                 objAfiliado.idAfiliado = int.Parse(dgvAfiliados.Rows[e.RowIndex].Cells[1].Value.ToString());
                 objAfiliado.nombre = dgvAfiliados.Rows[e.RowIndex].Cells[2].Value.ToString();
                 objAfiliado.apellido = dgvAfiliados.Rows[e.RowIndex].Cells[3].Value.ToString();
                 objAfiliado.idPLan = int.Parse(dgvAfiliados.Rows[e.RowIndex].Cells[4].Value.ToString());
-                //objAfiliado.fBaja = DateTime.Parse(dgvAfiliados.Rows[e.RowIndex].Cells[6].Value.ToString());
                 objAfiliado.observaciones = dgvAfiliados.Rows[e.RowIndex].Cells[7].Value.ToString();
-                //bajaAfi=ValidarFechaBaja(objAfiliado);
 
-                if (dgvAfiliados.Rows[e.RowIndex].Cells[6].Value.ToString() == null)
-                {
-                    objFormDetails.LoadContact(objAfiliado);
-                    objFormDetails.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("imposible modificar afiliado inactivo");
-                }
+
+                objFormDetails.LoadContact(objAfiliado);
+                objFormDetails.ShowDialog();
 
             }
             else
@@ -60,12 +53,6 @@ namespace CapaPresentacion
             }
         }
 
-        private bool ValidarFBaja()
-        {
-            
-            return true;
-        }
-
-        
+              
     }
 }

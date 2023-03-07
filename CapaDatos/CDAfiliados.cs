@@ -164,7 +164,7 @@ namespace CapaDatos
             finally { conn.Close(); }
         }
 
-        public void Habilitar(CEAfiliados paramAfiliado)
+        public void HabilitarAfiliados(CEAfiliados paramAfiliado)
         {
             string query = @"UPDATE afiliados SET fbaja = null WHERE idAfiliado = @idAfiliado";
             MySqlConnection conn = new MySqlConnection(connString);
